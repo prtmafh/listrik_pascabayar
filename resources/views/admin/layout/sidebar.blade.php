@@ -2,7 +2,7 @@
     <!--begin::Sidebar Brand-->
     <div class="sidebar-brand">
         <!--begin::Brand Link-->
-        <a href="./index.html" class="brand-link">
+        <a href="{{route('admin.dashboard')}}" class="brand-link">
             <!--begin::Brand Image-->
             <img
                 src="./assets/img/AdminLTELogo.png"
@@ -28,7 +28,7 @@
                 data-accordion="false"
                 id="navigation">
                 <li class="nav-item menu-open">
-                    <a href="#" class="nav-link active">
+                    <a href="{{route('admin.dashboard')}}" class="nav-link active">
                         <i class="nav-icon bi bi-speedometer"></i>
                         <p>
                             Dashboard
@@ -37,7 +37,7 @@
                 </li>
                 <li class="nav-header">MASTER DATA</li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('admin.data_admin')}}" class="nav-link">
                         <i class="nav-icon bi bi-person-fill"></i>
                         <p>
                             Data Admin
@@ -45,7 +45,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('admin.data_petugas')}}" class="nav-link">
                         <i class="nav-icon bi bi-person-gear"></i>
                         <p>
                             Data Petugas
@@ -53,7 +53,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('admin.data_pengguna')}}" class="nav-link">
                         <i class="nav-icon bi bi-people"></i>
                         <p>
                             Data Pengguna
@@ -61,7 +61,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('admin.tarif')}}" class="nav-link">
                         <i class="nav-icon bi bi-lightning-charge"></i>
                         <p>
                             Tarif Listrik
