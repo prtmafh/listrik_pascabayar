@@ -17,10 +17,17 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
+
+    protected $table = 'users';
+    protected $primaryKey = 'id_user';
+    public $incrementing = true;
+    protected $keyType = 'int';
+
     protected $fillable = [
-        'name',
-        'email',
+        'username',
         'password',
+        'nama_admin',
+        'id_level'
     ];
 
     /**
@@ -44,5 +51,9 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+    public function level()
+    {
+        return $this->belongsTo(Level::class, 'id_level');
     }
 }

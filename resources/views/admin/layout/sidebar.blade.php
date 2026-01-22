@@ -4,10 +4,7 @@
         <!--begin::Brand Link-->
         <a href="{{route('admin.dashboard')}}" class="brand-link">
             <!--begin::Brand Image-->
-            <img
-                src="./assets/img/AdminLTELogo.png"
-                alt="PLN Logo"
-                class="brand-image opacity-75 shadow" />
+            <img src="./assets/img/AdminLTELogo.png" alt="PLN Logo" class="brand-image opacity-75 shadow" />
             <!--end::Brand Image-->
             <!--begin::Brand Text-->
             <span class="brand-text fw-light">PLN</span>
@@ -20,13 +17,8 @@
     <div class="sidebar-wrapper">
         <nav class="mt-2">
             <!--begin::Sidebar Menu-->
-            <ul
-                class="nav sidebar-menu flex-column"
-                data-lte-toggle="treeview"
-                role="navigation"
-                aria-label="Main navigation"
-                data-accordion="false"
-                id="navigation">
+            <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="navigation"
+                aria-label="Main navigation" data-accordion="false" id="navigation">
                 <li class="nav-item menu-open">
                     <a href="{{route('admin.dashboard')}}" class="nav-link active">
                         <i class="nav-icon bi bi-speedometer"></i>
@@ -82,14 +74,20 @@
                     </a>
                 </li>
 
-                <li class="nav-header">Laporan</li>
+                <li class="nav-header">LAPORAN</li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-credit-card"></i>
                         <p>Pembayaran</p>
                     </a>
                 </li>
-
+                <li class="nav-header">OPSI</li>
+                <li class="nav-item">
+                    <a href="{{route('logout')}}" class="nav-link">
+                        <i class="nav-icon bi bi-box-arrow-right"></i>
+                        <p>Log Out</p>
+                    </a>
+                </li>
             </ul>
             <!--end::Sidebar Menu-->
         </nav>

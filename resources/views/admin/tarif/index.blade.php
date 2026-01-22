@@ -33,13 +33,13 @@
                                     <i class="bi bi-plus-circle"></i> Tambah Data
                                 </button>
                             </div>
-                            <table id="mytable" class="table table-bordered ">
+                            <table id="mytable" class="table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th class="text-center">No.</th>
+                                        <th class="text-center" style="width: 40px">No.</th>
                                         <th>Daya</th>
                                         <th>Tarif per Kwh</th>
-                                        <th style="width: 40px">Aksi</th>
+                                        <th class="text-end">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>

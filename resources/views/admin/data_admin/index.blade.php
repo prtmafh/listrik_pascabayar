@@ -12,10 +12,9 @@
                     <h3 class="mb-0">Data Admin</h3>
                 </div>
                 <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-end">
-                        <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Data Admin</li>
-                    </ol>
+                    <a href="{{ route('admin.data_admin.tambah') }}" class="btn btn-primary float-sm-end">
+                        <i class="bi bi-plus-circle"></i> Tambah Data
+                    </a>
                 </div>
             </div>
             <!--end::Row-->
@@ -29,21 +28,31 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="mb-3 text-end">
-                                <a href="{{ route('admin.data_admin.tambah') }}" class="btn btn-primary">
-                                    <i class="bi bi-plus-circle"></i> Tambah Data
-                                </a>
+
                             </div>
-                            <table id="mytable" class="table table-bordered ">
+                            <table id="mytable" class="table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th class="text-center">No.</th>
+                                        <th class="text-center" style="width: 40px">No.</th>
                                         <th>Username</th>
                                         <th>Nama Admin</th>
-                                        <th style="width: 40px">Aksi</th>
+                                        <th class="text-end">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-
+                                    <tr>
+                                        <td class="text-center">1</td>
+                                        <td>beni</td>
+                                        <td>Beni</td>
+                                        <td class="text-end">
+                                            <button class="btn btn-sm btn-primary btn-edit">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-sm btn-danger btn-delete">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
 
                                 </tbody>
                             </table>
@@ -57,28 +66,29 @@
 @endsection
 @push('scripts')
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        new DataTable('#mytable', {
-            autoWidth: false,
-            columnDefs: [{
-                    width: '50px',
-                    targets: 0
-                },
-                {
-                    width: '200px',
-                    targets: 1
-                },
-                {
-                    width: '250px',
-                    targets: 2
-                },
-                {
-                    width: '100px',
-                    targets: 3
-                }
-            ]
-        });
-    });
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     new DataTable('#mytable', {
+    //         autoWidth: false,
+    //         columnDefs: [{
+    //                 width: '50px',
+    //                 targets: 0
+    //             },
+    //             {
+    //                 width: '200px',
+    //                 targets: 1
+    //             },
+    //             {
+    //                 width: '250px',
+    //                 targets: 2
+    //             },
+    //             {
+    //                 width: '100px',
+    //                 targets: 3
+    //             }
+    //         ]
+    //     });
+    // });
+  
 </script>
 
 @endpush

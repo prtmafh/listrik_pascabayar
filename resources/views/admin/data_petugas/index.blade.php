@@ -33,20 +33,22 @@
                                     <i class="bi bi-plus-circle"></i> Tambah Data
                                 </a>
                             </div>
-                            <table id="mytable" class="table table-bordered ">
-                                <thead>
-                                    <tr>
-                                        <th class="text-center">No.</th>
-                                        <th>Username</th>
-                                        <th>Nama Petugas</th>
-                                        <th style="width: 40px">Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+                            <div class="table-responsive">
+                                <table id="mytable" class="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center" style="width: 40px">No.</th>
+                                            <th>Username</th>
+                                            <th>Nama Petugas</th>
+                                            <th class="text-end">Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
 
 
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -57,28 +59,28 @@
 @endsection
 @push('scripts')
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        new DataTable('#mytable', {
-            autoWidth: false,
-            columnDefs: [{
-                    width: '50px',
-                    targets: 0
-                },
-                {
-                    width: '200px',
-                    targets: 1
-                },
-                {
-                    width: '250px',
-                    targets: 2
-                },
-                {
-                    width: '100px',
-                    targets: 3
-                }
-            ]
-        });
-    });
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     new DataTable('#mytable', {
+    //         autoWidth: false,
+    //         columnDefs: [{
+    //                 width: '50px',
+    //                 targets: 0
+    //             },
+    //             {
+    //                 width: '200px',
+    //                 targets: 1
+    //             },
+    //             {
+    //                 width: '250px',
+    //                 targets: 2
+    //             },
+    //             {
+    //                 width: '100px',
+    //                 targets: 3
+    //             }
+    //         ]
+    //     });
+    // });
 </script>
 
 @endpush
