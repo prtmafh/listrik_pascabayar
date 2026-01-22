@@ -29,9 +29,9 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="mb-3 text-end">
-                                <button class="btn btn-primary">
+                                <a href="{{ route('admin.data_petugas.tambah') }}" class="btn btn-primary">
                                     <i class="bi bi-plus-circle"></i> Tambah Data
-                                </button>
+                                </a>
                             </div>
                             <table id="mytable" class="table table-bordered ">
                                 <thead>

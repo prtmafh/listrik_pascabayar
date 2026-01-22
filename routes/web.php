@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('admin.dashboard');
 });
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
 })->name('admin.dashboard');
@@ -23,3 +26,9 @@ Route::get('/tarif', function () {
 Route::get('/tambah_data_admin', function () {
     return view('admin.data_admin.tambah');
 })->name('admin.data_admin.tambah');
+Route::get('/tambah_data_petugas', function () {
+    return view('admin.data_petugas.tambah');
+})->name('admin.data_petugas.tambah');
+Route::get('/tambah_data_pengguna', function () {
+    return view('admin.data_pengguna.tambah');
+})->name('admin.data_pengguna.tambah');
