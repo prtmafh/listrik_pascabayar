@@ -12,10 +12,9 @@
                     <h3 class="mb-0">Data Petugas</h3>
                 </div>
                 <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-end">
-                        <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Data Petugas</li>
-                    </ol>
+                    <a href="{{ route('admin.data_petugas.tambah') }}" class="btn btn-primary float-sm-end">
+                        <i class="bi bi-plus-circle"></i> Tambah Data
+                    </a>
                 </div>
             </div>
             <!--end::Row-->
@@ -28,11 +27,6 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <div class="mb-3 text-end">
-                                <a href="{{ route('admin.data_petugas.tambah') }}" class="btn btn-primary">
-                                    <i class="bi bi-plus-circle"></i> Tambah Data
-                                </a>
-                            </div>
                             <div class="table-responsive">
                                 <table id="mytable" class="table table-striped table-hover">
                                     <thead>
@@ -57,30 +51,3 @@
     </div>
 </main>
 @endsection
-@push('scripts')
-<script>
-    // document.addEventListener('DOMContentLoaded', function() {
-    //     new DataTable('#mytable', {
-    //         autoWidth: false,
-    //         columnDefs: [{
-    //                 width: '50px',
-    //                 targets: 0
-    //             },
-    //             {
-    //                 width: '200px',
-    //                 targets: 1
-    //             },
-    //             {
-    //                 width: '250px',
-    //                 targets: 2
-    //             },
-    //             {
-    //                 width: '100px',
-    //                 targets: 3
-    //             }
-    //         ]
-    //     });
-    // });
-</script>
-
-@endpush

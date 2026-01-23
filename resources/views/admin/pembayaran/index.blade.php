@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('title', 'Data Pengguna')
+@section('title', 'Laporan Pembayaran Listrik')
 @section('content')
 <main class="app-main">
     <div class="app-content-header">
@@ -9,15 +9,15 @@
             <!--begin::Row-->
             <div class="row">
                 <div class="col-sm-6">
-                    <h3 class="mb-0">Data Pengguna</h3>
+                    <h3 class="mb-0">Laporan Pembayaran Listrik</h3>
                 </div>
                 <div class="col-sm-6">
-                    <a href="{{ route('admin.data_pengguna.tambah') }}" class="btn btn-primary float-sm-end">
-                        <i class="bi bi-plus-circle"></i> Tambah Data
-                    </a>
+                    <ol class="breadcrumb float-sm-end">
+                        <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{route('admin.data_pengguna')}}">Laporan Pembayaran</a></li>
+                    </ol>
                 </div>
             </div>
-            <!--end::Row-->
         </div>
         <!--end::Container-->
     </div>
@@ -31,10 +31,18 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center " style="width: 40px">No.</th>
-                                        <th>Username</th>
+                                        <th>No Kwh</th>
                                         <th>Nama Pengguna</th>
-                                        <th>Alamat</th>
-                                        <th>Nomor KwH</th>
+                                        <th>Daya</th>
+                                        <th>Bulan</th>
+                                        <th>Tahun</th>
+                                        <th>Meter Awal</th>
+                                        <th>Meter Akhir</th>
+                                        <th>Pemakaian</th>
+                                        <th>Biaya Admin</th>
+                                        <th>Total Bayar</th>
+                                        <th>Tanggal Bayar</th>
+                                        <th>Status</th>
                                         <th class="text-end">Aksi</th>
                                     </tr>
                                 </thead>

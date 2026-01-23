@@ -64,31 +64,3 @@
     </div>
 </main>
 @endsection
-@push('scripts')
-<script>
-    // document.addEventListener('DOMContentLoaded', function() {
-    //     new DataTable('#mytable', {
-    //         autoWidth: false,
-    //         columnDefs: [{
-    //                 width: '50px',
-    //                 targets: 0
-    //             },
-    //             {
-    //                 width: '200px',
-    //                 targets: 1
-    //             },
-    //             {
-    //                 width: '250px',
-    //                 targets: 2
-    //             },
-    //             {
-    //                 width: '100px',
-    //                 targets: 3
-    //             }
-    //         ]
-    //     });
-    // });
-  
-</script>
-
-@endpush

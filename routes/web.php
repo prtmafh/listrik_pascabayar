@@ -6,6 +6,9 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\PetugasController;
 use App\Http\Controllers\TarifController;
+use App\Http\Controllers\PenggunaanController;
+use App\Http\Controllers\tagihanController;
+use App\Http\Controllers\PembayaranController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LoginController::class, 'index'])->name('login');
@@ -27,4 +30,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/tarif', [TarifController::class, 'index'])->name('admin.tarif');
     Route::get('/tambah_tarif', [TarifController::class, 'TambahTarif'])->name('admin.tarif.tambah');
+
+    Route::get('/penggunaan', [PenggunaanController::class, 'index'])->name('admin.penggunaan');
+
+    Route::get('/tagihan', [tagihanController::class, 'index'])->name('admin.tagihan');
+
+    Route::get('/pembayaran', [PembayaranController::class, 'index'])->name('admin.pembayaran');
 });

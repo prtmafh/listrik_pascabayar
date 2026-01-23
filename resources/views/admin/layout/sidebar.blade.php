@@ -62,13 +62,13 @@
                 </li>
                 <li class="nav-header">TRANSAKSI</li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('admin.penggunaan')}}" class="nav-link">
                         <i class="nav-icon bi bi-graph-up"></i>
                         <p>Penggunaan</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('admin.tagihan')}}" class="nav-link">
                         <i class="nav-icon bi bi-receipt"></i>
                         <p>Tagihan</p>
                     </a>
@@ -76,7 +76,7 @@
 
                 <li class="nav-header">LAPORAN</li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('admin.pembayaran')}}" class="nav-link">
                         <i class="nav-icon bi bi-credit-card"></i>
                         <p>Pembayaran</p>
                     </a>

@@ -12,10 +12,9 @@
                     <h3 class="mb-0">Tarif Listrik</h3>
                 </div>
                 <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-end">
-                        <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Tarif Listrik</li>
-                    </ol>
+                    <a href="{{ route('admin.tarif.tambah') }}" class="btn btn-primary float-sm-end">
+                        <i class="bi bi-plus-circle"></i> Tambah Data
+                    </a>
                 </div>
             </div>
             <!--end::Row-->
@@ -28,11 +27,6 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <div class="mb-3 text-end">
-                                <button class="btn btn-primary">
-                                    <i class="bi bi-plus-circle"></i> Tambah Data
-                                </button>
-                            </div>
                             <table id="mytable" class="table table-striped table-hover">
                                 <thead>
                                     <tr>
@@ -55,31 +49,3 @@
     </div>
 </main>
 @endsection
-@push('scripts')
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        new DataTable('#mytable', {
-            autoWidth: false,
-            columnDefs: [{
-                    width: '50px',
-                    targets: 0
-                },
-                {
-                    width: '200px',
-                    targets: 1
-                },
-                {
-                    width: '250px',
-                    targets: 2
-                },
-                {
-                    width: '100px',
-                    targets: 3
-                }
-            ]
-
-        });
-    });
-</script>
-
-@endpush
