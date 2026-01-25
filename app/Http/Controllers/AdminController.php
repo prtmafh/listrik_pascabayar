@@ -15,4 +15,9 @@ class AdminController extends Controller
     {
         return view('admin.data_admin.tambah');
     }
+
+    public function EditAdmin($id)
+    {
+        return view('admin.data_admin.edit');
+    }
 }

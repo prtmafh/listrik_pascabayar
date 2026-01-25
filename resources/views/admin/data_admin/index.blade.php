@@ -45,9 +45,9 @@
                                         <td>beni</td>
                                         <td>Beni</td>
                                         <td class="text-end">
-                                            <button class="btn btn-sm btn-primary btn-edit">
+                                            <a href="{{ route('admin.data_admin.edit', 1) }}" class="btn btn-sm btn-primary btn-edit">
                                                 <i class="bi bi-pencil-square"></i>
-                                            </button>
+                                            </a>
                                             <button type="button" class="btn btn-sm btn-danger btn-delete">
                                                 <i class="bi bi-trash"></i>
                                             </button>

@@ -10,4 +10,9 @@ class PenggunaanController extends Controller
     {
         return view('admin.penggunaan.index');
     }
+
+    public function EditPenggunaan($id)
+    {
+        return view('admin.penggunaan.edit');
+    }
 }

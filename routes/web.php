@@ -21,17 +21,21 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/data_admin', [AdminController::class, 'index'])->name('admin.data_admin');
     Route::get('/tambah_data_admin', [AdminController::class, 'TambahAdmin'])->name('admin.data_admin.tambah');
+    Route::get('/edit_data_admin/{id}', [AdminController::class, 'EditAdmin'])->name('admin.data_admin.edit');
 
     Route::get('/data_petugas', [PetugasController::class, 'index'])->name('admin.data_petugas');
     Route::get('/tambah_data_petugas', [PetugasController::class, 'TambahPetugas'])->name('admin.data_petugas.tambah');
+    Route::get('/edit_data_petugas/{id}', [PetugasController::class, 'EditPetugas'])->name('admin.data_petugas.edit');
 
     Route::get('/data_pengguna', [PenggunaController::class, 'index'])->name('admin.data_pengguna');
     Route::get('/tambah_data_pengguna', [PenggunaController::class, 'TambahPengguna'])->name('admin.data_pengguna.tambah');
 
     Route::get('/tarif', [TarifController::class, 'index'])->name('admin.tarif');
     Route::get('/tambah_tarif', [TarifController::class, 'TambahTarif'])->name('admin.tarif.tambah');
+    Route::get('/edit_tarif/{id}', [TarifController::class, 'EditTarif'])->name('admin.tarif.edit');
 
     Route::get('/penggunaan', [PenggunaanController::class, 'index'])->name('admin.penggunaan');
+    Route::get('/edit_penggunaan/{id}', [PenggunaanController::class, 'EditPenggunaan'])->name('admin.penggunaan.edit');
 
     Route::get('/tagihan', [tagihanController::class, 'index'])->name('admin.tagihan');
 

@@ -15,4 +15,8 @@ class PetugasController extends Controller
     {
         return view('admin.data_petugas.tambah');
     }
+    public function EditPetugas($id)
+    {
+        return view('admin.data_petugas.edit');
+    }
 }

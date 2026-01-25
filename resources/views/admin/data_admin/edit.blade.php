@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('title', 'Tambah Data Admin')
+@section('title', 'Edit Data Admin')
 @section('content')
 <main class="app-main">
     <div class="app-content-header">
@@ -9,13 +9,13 @@
             <!--begin::Row-->
             <div class="row">
                 <div class="col-sm-6">
-                    <h3 class="mb-0">Tambah Data Admin</h3>
+                    <h3 class="mb-0">Edit Data Admin</h3>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-end">
                         <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a></li>
                         <li class="breadcrumb-item"><a href="{{route('admin.data_admin')}}">Data Admin</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Tambah Data Admin</li>
+                        <li class="breadcrumb-item active" aria-current="page">Edit Data Admin</li>
                     </ol>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                     <div class="card card-primary card-outline mb-4">
                         <!--begin::Header-->
                         <div class="card-header">
-                            <div class="card-title">Form Tambah Data Admin</div>
+                            <div class="card-title">Form Edit Data Admin</div>
                         </div>
                         <!--end::Header-->
                         <!--begin::Form-->
@@ -49,7 +49,7 @@
                                     <input type="text" class="form-control" id="username" />
                                 </div>
                                 <div class="mb-3">
-                                    <label for="password" class="form-label">Password</label>
+                                    <label for="password" class="form-label">Password (kosongkan jika tidak ingin mengubah)</label>
                                     <input type="password" class="form-control" id="password" />
                                 </div>
                                 <div class="mb-3">

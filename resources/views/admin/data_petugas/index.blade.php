@@ -38,8 +38,19 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-
-
+                                        <tr>
+                                            <td class="text-center">1</td>
+                                            <td>beni</td>
+                                            <td>Beni</td>
+                                            <td class="text-end">
+                                                <a href="{{ route('admin.data_petugas.edit', 1) }}" class="btn btn-sm btn-primary btn-edit">
+                                                    <i class="bi bi-pencil-square"></i>
+                                                </a>
+                                                <button type="button" class="btn btn-sm btn-danger btn-delete">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>

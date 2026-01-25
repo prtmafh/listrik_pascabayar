@@ -15,4 +15,9 @@ class TarifController extends Controller
     {
         return view('admin.tarif.tambah');
     }
+
+    public function EditTarif($id)
+    {
+        return view('admin.tarif.edit');
+    }
 }

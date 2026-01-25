@@ -27,30 +27,33 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <table id="mytable" class="table table-striped table-hover">
-                                <thead>
-                                    <tr>
-                                        <th class="text-center " style="width: 40px">No.</th>
-                                        <th>No Kwh</th>
-                                        <th>Nama Pengguna</th>
-                                        <th>Daya</th>
-                                        <th>Bulan</th>
-                                        <th>Tahun</th>
-                                        <th>Meter Awal</th>
-                                        <th>Meter Akhir</th>
-                                        <th>Pemakaian</th>
-                                        <th>Biaya Admin</th>
-                                        <th>Total Bayar</th>
-                                        <th>Tanggal Bayar</th>
-                                        <th>Status</th>
-                                        <th class="text-end">Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+                            <div class="table-responsive">
+                                <table id="mytable" class="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center " style="width: 40px">No.</th>
+                                            <th>No Kwh</th>
+                                            <th>Nama Pengguna</th>
+                                            <th>Daya</th>
+                                            <th>Bulan</th>
+                                            <th>Tahun</th>
+                                            <th>Meter Awal</th>
+                                            <th>Meter Akhir</th>
+                                            <th>Pemakaian</th>
+                                            <th>Biaya Admin</th>
+                                            <th>Total Bayar</th>
+                                            <th>Tanggal Bayar</th>
+                                            <th>Status</th>
+                                            <th class="text-end">Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
 
 
-                                </tbody>
-                            </table>
+                                    </tbody>
+
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

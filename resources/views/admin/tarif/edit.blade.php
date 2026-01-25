@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('title', 'Tambah Data Admin')
+@section('title', 'Edit Tarif Listrik')
 @section('content')
 <main class="app-main">
     <div class="app-content-header">
@@ -9,13 +9,13 @@
             <!--begin::Row-->
             <div class="row">
                 <div class="col-sm-6">
-                    <h3 class="mb-0">Tambah Data Admin</h3>
+                    <h3 class="mb-0">Edit Data Tarif Listrik</h3>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-end">
                         <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a></li>
-                        <li class="breadcrumb-item"><a href="{{route('admin.data_admin')}}">Data Admin</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Tambah Data Admin</li>
+                        <li class="breadcrumb-item"><a href="{{route('admin.data_petugas')}}">Tarif Listrik</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Edit Data Tarif</li>
                     </ol>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                     <div class="card card-primary card-outline mb-4">
                         <!--begin::Header-->
                         <div class="card-header">
-                            <div class="card-title">Form Tambah Data Admin</div>
+                            <div class="card-title">Form Edit Data Tarif Listrik</div>
                         </div>
                         <!--end::Header-->
                         <!--begin::Form-->
@@ -38,23 +38,15 @@
                             <!--begin::Body-->
                             <div class="card-body">
                                 <div class="mb-3">
-                                    <label for="nama_admin" class="form-label">Nama Admin</label>
+                                    <label for="daya" class="form-label">Daya</label>
                                     <input
                                         type="text"
                                         class="form-control"
-                                        id="nama_admin" />
+                                        id="daya" />
                                 </div>
                                 <div class="mb-3">
-                                    <label for="username" class="form-label">Username</label>
-                                    <input type="text" class="form-control" id="username" />
-                                </div>
-                                <div class="mb-3">
-                                    <label for="password" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="password" />
-                                </div>
-                                <div class="mb-3">
-                                    <label for="confirm_password" class="form-label">Confirm Password</label>
-                                    <input type="password" class="form-control" id="confirm_password" />
+                                    <label for="tarif_per_kwh" class="form-label">Tarif per Kwh</label>
+                                    <input type="text" class="form-control" id="tarif_per_kwh" />
                                 </div>
                             </div>
                             <!--end::Body-->

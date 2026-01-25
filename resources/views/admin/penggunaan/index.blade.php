@@ -64,7 +64,22 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-
+                                    <tr>
+                                        <td class="text-center">1</td>
+                                        <td>1234567890</td>
+                                        <td>Beni</td>
+                                        <td>Januari</td>
+                                        <td>2024</td>
+                                        <td>1000</td>
+                                        <td>1200</td>
+                                        <td>200</td>
+                                        <td><span class="badge bg-warning">Belom Input</span></td>
+                                        <td class="text-end">
+                                            <a href="{{ route('admin.penggunaan.edit', ['id' => 1]) }}" class="btn btn-sm btn-primary btn-edit">
+                                                <i class="bi bi-pencil-square"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
 
                                 </tbody>
                             </table>
