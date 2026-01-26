@@ -16,10 +16,10 @@
 
 <body class="layout-fixed sidebar-expand-lg sidebar-open bg-body-tertiary">
     <div class="app-wrapper">
-        @include('petugas.layout.sidebar')
-        @include('petugas.layout.header')
+        @include('pelanggan.layout.sidebar')
+        @include('pelanggan.layout.header')
         @yield('content')
-        @include('petugas.layout.footer')
+        @include('pelanggan.layout.footer')
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="{{ asset('assets/js/adminlte.js') }}"></script>

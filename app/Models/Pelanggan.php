@@ -26,6 +26,13 @@ class Pelanggan extends Authenticatable
         'password',
     ];
 
+    protected function casts(): array
+    {
+        return [
+            'password' => 'hashed',
+        ];
+    }
+
     // public function tarif()
     // {
     //     return $this->belongsTo(Tarif::class, 'id_tarif', 'id_tarif');

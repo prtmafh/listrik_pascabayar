@@ -1,6 +1,6 @@
-@extends('admin.layout.app')
+@extends('pelanggan.layout.app')
 
-@section('title', 'Laporan Pembayaran Listrik')
+@section('title', 'Riwayat Pembayaran Listrik')
 @section('content')
 <main class="app-main">
     <div class="app-content-header">
@@ -9,13 +9,7 @@
             <!--begin::Row-->
             <div class="row">
                 <div class="col-sm-6">
-                    <h3 class="mb-0">Laporan Pembayaran Listrik</h3>
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-end">
-                        <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a></li>
-                        <li class="breadcrumb-item"><a href="{{route('admin.data_pengguna')}}">Laporan Pembayaran</a></li>
-                    </ol>
+                    <h3 class="mb-0">Riwayat Pembayaran Listrik</h3>
                 </div>
             </div>
         </div>
@@ -33,10 +27,9 @@
                                         <tr>
                                             <th class="text-center " style="width: 40px">No.</th>
                                             <th>No Kwh</th>
-                                            <th>Nama Pengguna</th>
                                             <th>Daya</th>
-                                            <th>Bulan</th>
                                             <th>Tahun</th>
+                                            <th>Bulan</th>
                                             <th>Meter Awal</th>
                                             <th>Meter Akhir</th>
                                             <th>Pemakaian</th>
@@ -44,17 +37,15 @@
                                             <th>Total Bayar</th>
                                             <th>Tanggal Bayar</th>
                                             <th>Status</th>
-                                            <th class="text-end">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td class="text-center ">1</td>
                                             <td>1234567890</td>
-                                            <td>Beni</td>
                                             <td>1300 VA</td>
-                                            <td>Januari</td>
                                             <td>2024</td>
+                                            <td>Januari</td>
                                             <td>1000</td>
                                             <td>1200</td>
                                             <td>200</td>
@@ -62,11 +53,6 @@
                                             <td>Rp 305.000,-</td>
                                             <td>15 Januari 2024</td>
                                             <td><span class="badge bg-success">Lunas</span></td>
-                                            <td class="text-end">
-                                                <a href="#" class="btn btn-sm btn-info btn-view">
-                                                    <i class="bi bi-eye"></i>
-                                                </a>
-                                            </td>
                                         </tr>
 
 

@@ -16,10 +16,10 @@
 
 <body class="layout-fixed sidebar-expand-lg sidebar-open bg-body-tertiary">
     <div class="app-wrapper">
-        @include('petugas.layout.sidebar')
-        @include('petugas.layout.header')
+        @include('admin.layout.sidebar')
+        @include('admin.layout.header')
         @yield('content')
-        @include('petugas.layout.footer')
+        @include('admin.layout.footer')
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="{{ asset('assets/js/adminlte.js') }}"></script>
@@ -27,9 +27,9 @@
     {{-- <script src="https://cdn.datatables.net/2.3.6/js/dataTables.min.js"></script> --}}
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready( function () {
             $('#mytable').DataTable();
-        });
+        } );
     </script>
     @stack('scripts')
 </body>

@@ -32,7 +32,7 @@ class LoginController extends Controller
         $pelanggan = Pelanggan::where('username', $credentials['username'])->first();
         if ($pelanggan && Hash::check($credentials['password'], $pelanggan->password)) {
             Auth::guard('pelanggan')->login($pelanggan);
-            return redirect()->intended('/dashboard/pelanggan/pelanggan');
+            return redirect()->intended('/pelanggan/dashboard');
         }
 
         return back()->withErrors([

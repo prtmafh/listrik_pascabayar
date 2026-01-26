@@ -9,6 +9,7 @@ use App\Http\Controllers\TarifController;
 use App\Http\Controllers\PenggunaanController;
 use App\Http\Controllers\tagihanController;
 use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\PelangganController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LoginController::class, 'index'])->name('login');
@@ -40,4 +41,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/tagihan', [tagihanController::class, 'index'])->name('admin.tagihan');
 
     Route::get('/pembayaran', [PembayaranController::class, 'index'])->name('admin.pembayaran');
+});
+Route::middleware(['auth:pelanggan'])->group(function () {
+    Route::get('/pelanggan/dashboard', [PelangganController::class, 'index'])->name('pelanggan.dashboard');
+    Route::get('/pelanggan/penggunaan_saya', [PelangganController::class, 'penggunaanSaya'])->name('pelanggan.penggunaan_saya');
+    Route::get('/pelanggan/tagihan_saya', [PelangganController::class, 'tagihanSaya'])->name('pelanggan.tagihan_saya');
+    Route::get('/pelanggan/riwayat_pembayaran', [PelangganController::class, 'riwayat'])->name('pelanggan.riwayat_pembayaran');
 });
