@@ -1,4 +1,4 @@
-@extends('admin.layout.app')
+@extends('layout.app')
 
 @section('title', 'Tambah Data Pengguna')
 @section('content')
@@ -39,31 +39,19 @@
                             <div class="card-body">
                                 <div class="mb-3">
                                     <label for="nama_admin" class="form-label">Nama Pengguna</label>
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="nama_admin" />
+                                    <input type="text" class="form-control" id="nama_admin" />
                                 </div>
                                 <div class="mb-3">
                                     <label for="alamat" class="form-label">Alamat</label>
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="alamat" />
+                                    <input type="text" class="form-control" id="alamat" />
                                 </div>
                                 <div class="mb-3">
                                     <label for="nomorkwh" class="form-label">Nomor KwH</label>
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="nomorkwh" />
+                                    <input type="text" class="form-control" id="nomorkwh" />
                                 </div>
                                 <div class="mb-3">
                                     <label for="id_tarif" class="form-label">Daya Listrik</label>
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="id_tarif" />
+                                    <input type="text" class="form-control" id="id_tarif" />
                                 </div>
                                 <div class="mb-3">
                                     <label for="username" class="form-label">Username</label>

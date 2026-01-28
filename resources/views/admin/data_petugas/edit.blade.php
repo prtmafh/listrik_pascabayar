@@ -1,4 +1,4 @@
-@extends('admin.layout.app')
+@extends('layout.app')
 
 @section('title', 'Edit Data Petugas')
 @section('content')
@@ -39,17 +39,15 @@
                             <div class="card-body">
                                 <div class="mb-3">
                                     <label for="nama_petugas" class="form-label">Nama Petugas</label>
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="nama_petugas" />
+                                    <input type="text" class="form-control" id="nama_petugas" />
                                 </div>
                                 <div class="mb-3">
                                     <label for="username" class="form-label">Username</label>
                                     <input type="text" class="form-control" id="username" />
                                 </div>
                                 <div class="mb-3">
-                                    <label for="password" class="form-label">Password (kosongkan jika tidak ingin mengubah)</label>
+                                    <label for="password" class="form-label">Password (kosongkan jika tidak ingin
+                                        mengubah)</label>
                                     <input type="password" class="form-control" id="password" />
                                 </div>
                                 <div class="mb-3">

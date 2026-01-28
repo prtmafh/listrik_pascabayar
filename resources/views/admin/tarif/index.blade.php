@@ -1,4 +1,4 @@
-@extends('admin.layout.app')
+@extends('layout.app')
 
 @section('title', 'Tarif Listrik')
 @section('content')
@@ -42,7 +42,8 @@
                                         <td>1300 VA</td>
                                         <td>Rp 1.500,-</td>
                                         <td class="text-end">
-                                            <a href="{{ route('admin.tarif.edit', 1) }}" class="btn btn-sm btn-primary btn-edit">
+                                            <a href="{{ route('admin.tarif.edit', 1) }}"
+                                                class="btn btn-sm btn-primary btn-edit">
                                                 <i class="bi bi-pencil-square"></i>
                                             </a>
                                             <button type="button" class="btn btn-sm btn-danger btn-delete">

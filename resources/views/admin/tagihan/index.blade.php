@@ -1,4 +1,4 @@
-@extends('admin.layout.app')
+@extends('layout.app')
 
 @section('title', 'Tagihan Listrik')
 @section('content')
@@ -28,8 +28,8 @@
                             <option value="November">November</option>
                             <option value="Desember">Desember</option>
                         </select>
-                        <input type="text" name="tahun" class="form-control w-auto"
-                            placeholder="Tahun (misal: 2025)" required>
+                        <input type="text" name="tahun" class="form-control w-auto" placeholder="Tahun (misal: 2025)"
+                            required>
 
                         <a href="#" class="btn btn-warning">
                             <i class="bi bi-gear"></i> Generate Tagihan
@@ -79,63 +79,79 @@
                                         <td>Rp 300.000,-</td>
                                         <td><span class="badge bg-danger">Belum Bayar</span></td>
                                         <td>
-                                            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalBayar" title="Bayar Tagihan">
+                                            <button class="btn btn-success btn-sm" data-bs-toggle="modal"
+                                                data-bs-target="#modalBayar" title="Bayar Tagihan">
                                                 <i class="bi bi-currency-dollar"></i>
                                             </button>
                                             <!-- Modal -->
-                                            <div class="modal fade" id="modalBayar" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+                                            <div class="modal fade" id="modalBayar" tabindex="-1"
+                                                aria-labelledby="modalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <form action="" method="post">
                                                             <div class="modal-header">
-                                                                <h5 class="modal-title" id="modalLabel">Pembayaran Tagihan</h5>
-                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                <h5 class="modal-title" id="modalLabel">Pembayaran
+                                                                    Tagihan</h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Nama Pelanggan</label>
-                                                                    <input type="text" class="form-control" value="" readonly>
+                                                                    <input type="text" class="form-control" value=""
+                                                                        readonly>
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label class="form-label">No KWH</label>
-                                                                    <input type="text" class="form-control" value="" readonly>
+                                                                    <input type="text" class="form-control" value=""
+                                                                        readonly>
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Daya</label>
-                                                                    <input type="text" class="form-control" value="" readonly>
+                                                                    <input type="text" class="form-control" value=""
+                                                                        readonly>
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Meter Awal</label>
-                                                                    <input type="text" class="form-control" value="" readonly>
+                                                                    <input type="text" class="form-control" value=""
+                                                                        readonly>
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Meter Akhir</label>
-                                                                    <input type="text" class="form-control" value="" readonly>
+                                                                    <input type="text" class="form-control" value=""
+                                                                        readonly>
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Jumlah Meter</label>
-                                                                    <input type="text" class="form-control" value="" readonly>
+                                                                    <input type="text" class="form-control" value=""
+                                                                        readonly>
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Tarif per KWH</label>
-                                                                    <input type="text" class="form-control" value="Rp " readonly>
+                                                                    <input type="text" class="form-control" value="Rp "
+                                                                        readonly>
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Total Tagihan</label>
-                                                                    <input type="text" class="form-control" value="Rp " readonly>
+                                                                    <input type="text" class="form-control" value="Rp "
+                                                                        readonly>
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Biaya Admin</label>
-                                                                    <input type="number" name="biaya_admin" class="form-control" required>
+                                                                    <input type="number" name="biaya_admin"
+                                                                        class="form-control" required>
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label class="form-label">Tanggal Pembayaran</label>
-                                                                    <input type="date" name="tanggal_bayar" class="form-control" required>
+                                                                    <input type="date" name="tanggal_bayar"
+                                                                        class="form-control" required>
                                                                 </div>
                                                             </div>
                                                             <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                                                <button type="submit" class="btn btn-success">Bayar</button>
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">Batal</button>
+                                                                <button type="submit"
+                                                                    class="btn btn-success">Bayar</button>
                                                             </div>
                                                         </form>
                                                     </div>

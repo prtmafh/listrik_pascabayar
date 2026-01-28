@@ -25,7 +25,7 @@ class LoginController extends Controller
         $user = User::where('username', $credentials['username'])->first();
         if ($user && Hash::check($credentials['password'], $user->password)) {
             Auth::guard('web')->login($user);
-            return redirect()->intended('/admin/dashboard');
+            return redirect()->intended('/dashboard');
         }
 
         // Coba login sebagai pelanggan

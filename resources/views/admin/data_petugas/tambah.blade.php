@@ -1,4 +1,4 @@
-@extends('admin.layout.app')
+@extends('layout.app')
 
 @section('title', 'Tambah Data Petugas')
 @section('content')
@@ -34,29 +34,28 @@
                         </div>
                         <!--end::Header-->
                         <!--begin::Form-->
-                        <form>
+                        <form method="POST" action="{{ route('admin.data_petugas.tambah.post') }}">
+                            @csrf
                             <!--begin::Body-->
                             <div class="card-body">
                                 <div class="mb-3">
                                     <label for="nama_admin" class="form-label">Nama Petugas</label>
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="nama_admin" />
+                                    <input type="text" class="form-control" name="nama_admin" />
                                 </div>
                                 <div class="mb-3">
-                                    <label for="username" class="form-label">Username</label>
-                                    <input type="text" class="form-control" id="username" />
+                                    <label for="username" class="form-label">Usernam</label>
+                                    <input type="text" class="form-control" name="username" />
                                 </div>
                                 <div class="mb-3">
                                     <label for="password" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="password" />
+                                    <input type="password" class="form-control" name="password" />
                                 </div>
+                                <input type="hidden" name="id_level" value="2">
+                                <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
                             <!--end::Body-->
                             <!--begin::Footer-->
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
                             <!--end::Footer-->
                         </form>

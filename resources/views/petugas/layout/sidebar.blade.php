@@ -2,7 +2,7 @@
     <!--begin::Sidebar Brand-->
     <div class="sidebar-brand">
         <!--begin::Brand Link-->
-        <a href="{{route('petugas.dashboard')}}" class="brand-link">
+        <a href="#" class="brand-link">
             <!--begin::Brand Image-->
             <img src="./assets/img/AdminLTELogo.png" alt="PLN Logo" class="brand-image opacity-75 shadow" />
             <!--end::Brand Image-->
@@ -20,7 +20,7 @@
             <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="navigation"
                 aria-label="Main navigation" data-accordion="false" id="navigation">
                 <li class="nav-item menu-open">
-                    <a href="{{route('petugas.dashboard')}}" class="nav-link active">
+                    <a href="#" class="nav-link active">
                         <i class="nav-icon bi bi-speedometer"></i>
                         <p>
                             Dashboard
@@ -29,7 +29,7 @@
                 </li>
                 <li class="nav-header">TRANSAKSI</li>
                 <li class="nav-item">
-                    <a href="{{route('admin.tagihan')}}" class="nav-link">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-receipt"></i>
                         <p>Tagihan</p>
                     </a>

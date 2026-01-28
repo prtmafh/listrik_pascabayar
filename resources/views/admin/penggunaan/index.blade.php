@@ -1,4 +1,4 @@
-@extends('admin.layout.app')
+@extends('layout.app')
 
 @section('title', 'Penggunaan Listrik')
 @section('content')
@@ -28,8 +28,8 @@
                             <option value="November">November</option>
                             <option value="Desember">Desember</option>
                         </select>
-                        <input type="text" name="tahun" class="form-control w-auto"
-                            placeholder="Tahun (misal: 2025)" required>
+                        <input type="text" name="tahun" class="form-control w-auto" placeholder="Tahun (misal: 2025)"
+                            required>
 
                         <a href="#" class="btn btn-warning">
                             <i class="bi bi-gear"></i> Generate Penggunaan
@@ -75,7 +75,8 @@
                                         <td>200</td>
                                         <td><span class="badge bg-warning">Belom Input</span></td>
                                         <td class="text-end">
-                                            <a href="{{ route('admin.penggunaan.edit', ['id' => 1]) }}" class="btn btn-sm btn-primary btn-edit">
+                                            <a href="{{ route('admin.penggunaan.edit', ['id' => 1]) }}"
+                                                class="btn btn-sm btn-primary btn-edit">
                                                 <i class="bi bi-pencil-square"></i>
                                             </a>
                                         </td>

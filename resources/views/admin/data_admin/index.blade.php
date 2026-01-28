@@ -1,4 +1,4 @@
-@extends('admin.layout.app')
+@extends('layout.app')
 
 @section('title', 'Data Admin')
 @section('content')
@@ -45,7 +45,8 @@
                                         <td>beni</td>
                                         <td>Beni</td>
                                         <td class="text-end">
-                                            <a href="{{ route('admin.data_admin.edit', 1) }}" class="btn btn-sm btn-primary btn-edit">
+                                            <a href="{{ route('admin.data_admin.edit', 1) }}"
+                                                class="btn btn-sm btn-primary btn-edit">
                                                 <i class="bi bi-pencil-square"></i>
                                             </a>
                                             <button type="button" class="btn btn-sm btn-danger btn-delete">

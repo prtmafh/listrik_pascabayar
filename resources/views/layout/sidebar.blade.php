@@ -19,6 +19,8 @@
             <!--begin::Sidebar Menu-->
             <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="navigation"
                 aria-label="Main navigation" data-accordion="false" id="navigation">
+                @if (Auth::guard('web')->check())
+                @php $level = Auth::user()->id_level; @endphp
                 <li class="nav-item menu-open">
                     <a href="{{route('admin.dashboard')}}" class="nav-link active">
                         <i class="nav-icon bi bi-speedometer"></i>
@@ -27,6 +29,9 @@
                         </p>
                     </a>
                 </li>
+
+                {{-- Hanya Admin --}}
+                @if ($level == 1)
                 <li class="nav-header">MASTER DATA</li>
                 <li class="nav-item">
                     <a href="{{route('admin.data_admin')}}" class="nav-link">
@@ -60,20 +65,26 @@
                         </p>
                     </a>
                 </li>
+                @endif
+                {{-- Akhir Hanya Admin --}}
+
                 <li class="nav-header">TRANSAKSI</li>
+                @if ($level == 1)
                 <li class="nav-item">
                     <a href="{{route('admin.penggunaan')}}" class="nav-link">
                         <i class="nav-icon bi bi-graph-up"></i>
                         <p>Penggunaan</p>
                     </a>
                 </li>
+                @endif
+
                 <li class="nav-item">
                     <a href="{{route('admin.tagihan')}}" class="nav-link">
                         <i class="nav-icon bi bi-receipt"></i>
                         <p>Tagihan</p>
                     </a>
                 </li>
-
+                @if ($level == 1)
                 <li class="nav-header">LAPORAN</li>
                 <li class="nav-item">
                     <a href="{{route('admin.pembayaran')}}" class="nav-link">
@@ -81,6 +92,15 @@
                         <p>Pembayaran</p>
                     </a>
                 </li>
+                @endif
+                @if ($level == 2)
+                <li class="nav-item">
+                    <a href="{{route('admin.pembayaran')}}" class="nav-link">
+                        <i class="nav-icon bi bi-credit-card"></i>
+                        <p>Pembayaran</p>
+                    </a>
+                </li>
+                @endif
                 <li class="nav-header">OPSI</li>
                 <li class="nav-item">
                     <a href="{{route('logout')}}" class="nav-link">
@@ -90,6 +110,7 @@
                 </li>
             </ul>
             <!--end::Sidebar Menu-->
+            @endif
         </nav>
     </div>
     <!--end::Sidebar Wrapper-->
