@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\PetugasController;
@@ -37,14 +38,17 @@ Route::middleware(['auth', 'ceklevel:1'])->group(function () {
     Route::get('/edit_tarif/{id}', [TarifController::class, 'EditTarif'])->name('admin.tarif.edit');
 
     Route::get('/penggunaan', [PenggunaanController::class, 'index'])->name('admin.penggunaan');
+    Route::post('/penggunaan/generate', [PenggunaanController::class, 'generateBulanIni'])->name('penggunaan.generate');
     Route::get('/edit_penggunaan/{id}', [PenggunaanController::class, 'EditPenggunaan'])->name('admin.penggunaan.edit');
 });
 Route::middleware(['auth', 'ceklevel:1,2'])->group(
     function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
         Route::get('/tagihan', [tagihanController::class, 'index'])->name('admin.tagihan');
+        Route::post('/tagihan/generate', [tagihanController::class, 'generate'])->name('tagihan.generate');
 
         Route::get('/pembayaran', [PembayaranController::class, 'index'])->name('admin.pembayaran');
+        Route::get('/laporan', [LaporanController::class, 'index'])->name('admin.laporan');
     }
 );
 Route::middleware(['auth:pelanggan'])->group(function () {

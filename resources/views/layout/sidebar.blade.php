@@ -4,10 +4,11 @@
         <!--begin::Brand Link-->
         <a href="{{route('admin.dashboard')}}" class="brand-link">
             <!--begin::Brand Image-->
-            <img src="./assets/img/AdminLTELogo.png" alt="PLN Logo" class="brand-image opacity-75 shadow" />
+            {{-- <img src="./assets/img/AdminLTELogo.png" alt="PLN Logo" class="brand-image opacity-75 shadow" /> --}}
+            <img src="{{ asset('assets/img/Logo_PLN.png') }}" alt="Logo PLN" class="brand-image opacity-75 shadow">
             <!--end::Brand Image-->
             <!--begin::Brand Text-->
-            <span class="brand-text fw-light">PLN</span>
+            {{-- <span class="brand-text fw-light">PLN</span> --}}
             <!--end::Brand Text-->
         </a>
         <!--end::Brand Link-->
@@ -87,7 +88,7 @@
                 @if ($level == 1)
                 <li class="nav-header">LAPORAN</li>
                 <li class="nav-item">
-                    <a href="{{route('admin.pembayaran')}}" class="nav-link">
+                    <a href="{{route('admin.laporan')}}" class="nav-link">
                         <i class="nav-icon bi bi-credit-card"></i>
                         <p>Pembayaran</p>
                     </a>
@@ -95,7 +96,7 @@
                 @endif
                 @if ($level == 2)
                 <li class="nav-item">
-                    <a href="{{route('admin.pembayaran')}}" class="nav-link">
+                    <a href="{{route('admin.laporan')}}" class="nav-link">
                         <i class="nav-icon bi bi-credit-card"></i>
                         <p>Pembayaran</p>
                     </a>

@@ -31,9 +31,12 @@
                         <input type="text" name="tahun" class="form-control w-auto" placeholder="Tahun (misal: 2025)"
                             required>
 
-                        <a href="#" class="btn btn-warning">
-                            <i class="bi bi-gear"></i> Generate Penggunaan
-                        </a>
+                        <form action="{{ route('penggunaan.generate') }}" method="POST" class="">
+                            @csrf
+                            <button type="submit" class="btn btn-warning">
+                                <i class="bi bi-plus-circle"></i> Generate Penggunaan Bulan Ini
+                            </button>
+                        </form>
                     </div>
                 </div>
 
@@ -48,42 +51,55 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <table id="mytable" class="table table-striped table-hover">
-                                <thead>
-                                    <tr>
-                                        <th class="text-center " style="width: 40px">No.</th>
-                                        <th>No Kwh</th>
-                                        <th>Nama Pengguna</th>
-                                        <th>Bulan</th>
-                                        <th>Tahun</th>
-                                        <th>Meter Awal</th>
-                                        <th>Meter Akhir</th>
-                                        <th>Jumlah Meter</th>
-                                        <th>Status</th>
-                                        <th class="text-end">Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="text-center">1</td>
-                                        <td>1234567890</td>
-                                        <td>Beni</td>
-                                        <td>Januari</td>
-                                        <td>2024</td>
-                                        <td>1000</td>
-                                        <td>1200</td>
-                                        <td>200</td>
-                                        <td><span class="badge bg-warning">Belom Input</span></td>
-                                        <td class="text-end">
-                                            <a href="{{ route('admin.penggunaan.edit', ['id' => 1]) }}"
-                                                class="btn btn-sm btn-primary btn-edit">
-                                                <i class="bi bi-pencil-square"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
+                            @if(session('success'))
+                            <div class="alert alert-success">{{ session('success') }}</div>
+                            @endif
+                            @if(session('error'))
+                            <div class="alert alert-danger">{{ session('error') }}</div>
+                            @endif
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover" id="mytable">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>No KWH</th>
+                                            <th>Nama</th>
+                                            <th>Bulan</th>
+                                            <th>Tahun</th>
+                                            <th>Meter Awal</th>
+                                            <th>Meter Akhir</th>
+                                            <th>Pemakaian</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($data as $item)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $item->pelanggan->nomor_kwh }}</td>
+                                            <td class="text-capitalize">{{ $item->pelanggan->nama_pelanggan }}</td>
+                                            <td>{{ $item->bulan }}</td>
+                                            <td>{{ $item->tahun }}</td>
+                                            <td>{{ $item->meter_awal }} kWh</td>
+                                            <td>{{ $item->meter_akhir ?? '-' }} kWh</td>
+                                            <td>
+                                                @if($item->meter_akhir !== null)
+                                                {{ $item->meter_akhir - $item->meter_awal }}
+                                                @else -
+                                                @endif
+                                                kWh
+                                            </td>
+                                            <td>
+                                                <a href="{{ route('admin.penggunaan.edit', ['id' => 1]) }}"
+                                                    class="btn btn-sm btn-primary btn-edit">
+                                                    <i class="bi bi-pencil-square"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

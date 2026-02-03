@@ -16,31 +16,37 @@
             <!--begin::User Menu Dropdown-->
             <li class="nav-item dropdown user-menu">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                    <img
-                        src="./assets/img/user2-160x160.jpg"
-                        class="user-image rounded-circle shadow"
-                        alt="User Image" />
-                    <span class="d-none d-md-inline">Alexander Pierce</span>
+                    <img src="{{ asset('assets/img/user.png') }}" class="user-image rounded-circle shadow"
+                        alt="User Image">
+                    {{-- <span class="d-none d-md-inline text-capitalize">
+                        @if ($user)
+                        {{ $user->nama_admin ?? 'User' }}
+                        @elseif ($pelanggan)
+                        {{ $pelanggan->nama_pelanggan }}
+                        @else
+                        Pengguna
+                        @endif
+                    </span> --}}
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
                     <!--begin::User Image-->
-                    <li class="user-header text-bg-primary">
-                        <img
-                            src="./assets/img/user2-160x160.jpg"
-                            class="rounded-circle shadow"
-                            alt="User Image" />
+                    {{-- <li class="user-header text-bg-primary">
+                        <img src="./assets/img/user2-160x160.jpg" class="rounded-circle shadow" alt="User Image" />
                         <p>
                             Alexander Pierce - Web Developer
                             <small>Member since Nov. 2023</small>
                         </p>
-                    </li>
+                    </li> --}}
                     <!--end::User Image-->
                     <!--begin::Menu Body-->
                     <li class="user-body">
                         <!--begin::Row-->
                         <div class="row">
-                            <a href="#" class="btn btn-default btn-flat">Profile</a>
-                            <a href="#" class="btn btn-default btn-flat float-end">Sign out</a>
+                            {{-- <a href="#" class="btn btn-default btn-flat">Profile</a> --}}
+                            <a href="{{route('logout')}}" class="btn btn-default btn-flat">
+                                <i class="nav-icon bi bi-box-arrow-right"></i>
+                                Log Out
+                            </a>
                         </div>
                         <!--end::Row-->
                     </li>

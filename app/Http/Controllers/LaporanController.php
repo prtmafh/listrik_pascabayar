@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pembayaran;
 use Illuminate\Http\Request;
 
-class PembayaranController extends Controller
+class LaporanController extends Controller
 {
     public function index(Request $request)
     {
@@ -30,6 +30,6 @@ class PembayaranController extends Controller
             ->orderBy('pembayaran.id_pembayaran', 'desc');
 
         $pembayaran = $query->get();
-        return view('admin.pembayaran.index', compact('pembayaran', 'bulan', 'tahun'));
+        return view('admin.laporan.index', compact('pembayaran', 'bulan', 'tahun'));
     }
 }
