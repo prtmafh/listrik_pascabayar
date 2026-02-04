@@ -1,6 +1,5 @@
 @extends('layout.app')
-
-@section('title', 'Edit Data Petugas')
+@section('title', 'Edit Data Pengguna')
 @section('content')
 <main class="app-main">
     <div class="app-content-header">
@@ -9,13 +8,13 @@
             <!--begin::Row-->
             <div class="row">
                 <div class="col-sm-6">
-                    <h3 class="mb-0">Edit Data Petugas</h3>
+                    <h3 class="mb-0">Edit Data Pengguna</h3>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-end">
                         <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a></li>
-                        <li class="breadcrumb-item"><a href="{{route('admin.data_petugas')}}">Data Petugas</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Edit Data Petugas</li>
+                        <li class="breadcrumb-item"><a href="{{route('admin.data_pengguna')}}">Data Pengguna</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Edit Data Pengguna</li>
                     </ol>
                 </div>
             </div>
@@ -30,31 +29,44 @@
                     <div class="card card-primary card-outline mb-4">
                         <!--begin::Header-->
                         <div class="card-header">
-                            <div class="card-title">Form Edit Data Petugas</div>
+                            <div class="card-title">Form Edit Data Pengguna</div>
                         </div>
                         <!--end::Header-->
                         <!--begin::Form-->
-                        <form method="POST" action="{{ route('admin.data_petugas.update', $admin->id_user) }}">
+                        <form method="POST" action="{{ route('admin.data_pengguna.update', $pelanggan->id_pelanggan) }}">
                             @csrf
                             @method('PUT')
                             <!--begin::Body-->
                             <div class="card-body">
                                 <div class="mb-3">
-                                    <label for="nama_petugas" class="form-label">Nama Petugas</label>
-                                    <input type="text" class="form-control" id="nama_admin" name="nama_admin" value="{{ $admin->nama_admin }}" />
+                                    <label for="nama_pelanggan" class="form-label">Nama Pengguna</label>
+                                    <input type="text" class="form-control" id="nama_pelanggan" name="nama_pelanggan" value="{{ $pelanggan->nama_pelanggan }}" />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="alamat" class="form-label">Alamat</label>
+                                    <input type="text" class="form-control" id="alamat" name="alamat" value="{{ $pelanggan->alamat }}" />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="nomor_kwh" class="form-label">Nomor KwH</label>
+                                    <input type="text" class="form-control" id="nomor_kwh" name="nomor_kwh" value="{{ $pelanggan->nomor_kwh }}" />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="id_tarif" class="form-label">Daya Listrik</label>
+                                    <select class="form-control" id="id_tarif" name="id_tarif">
+                                        <option value="" disabled>Pilih Daya Listrik</option>
+                                        @foreach ($tarif as $t)
+                                        <option value="{{ $t->id_tarif }}" {{ $pelanggan->id_tarif == $t->id_tarif ? 'selected' : '' }}>{{ $t->daya }} VA - Rp {{ number_format($t->tarifperkwh, 0, ',', '.') }} per Kwh</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="mb-3">
                                     <label for="username" class="form-label">Username</label>
-                                    <input type="text" class="form-control" id="username" name="username" value="{{ $admin->username }}" />
+                                    <input type="text" class="form-control" id="username" name="username" value="{{ $pelanggan->username }}" />
                                 </div>
                                 <div class="mb-3">
                                     <label for="password" class="form-label">Password (kosongkan jika tidak ingin
                                         mengubah)</label>
                                     <input type="password" class="form-control" id="password" name="password" />
-                                </div>
-                                <div class="mb-3">
-                                    <label for="confirm_password" class="form-label">Confirm Password</label>
-                                    <input type="password" class="form-control" id="confirm_password" />
                                 </div>
                             </div>
                             <!--end::Body-->

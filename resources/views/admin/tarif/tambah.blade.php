@@ -1,4 +1,4 @@
-@extends('admin.layout.app')
+@extends('layout.app')
 
 @section('title', 'Tambah Tarif Listrik')
 @section('content')
@@ -34,7 +34,8 @@
                         </div>
                         <!--end::Header-->
                         <!--begin::Form-->
-                        <form>
+                        <form method="POST" action="{{ route('admin.tarif.tambah.post') }}">
+                            @csrf
                             <!--begin::Body-->
                             <div class="card-body">
                                 <div class="mb-3">
@@ -42,11 +43,12 @@
                                     <input
                                         type="text"
                                         class="form-control"
-                                        id="daya" />
+                                        id="daya"
+                                        name="daya" />
                                 </div>
                                 <div class="mb-3">
                                     <label for="tarifperkwh" class="form-label">Tarif per Kwh (Rp)</label>
-                                    <input type="text" class="form-control" id="tarifperkwh" />
+                                    <input type="text" class="form-control" id="tarifperkwh" name="tarifperkwh" />
                                 </div>
                             </div>
                             <!--end::Body-->

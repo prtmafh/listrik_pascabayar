@@ -33,10 +33,10 @@ class Pelanggan extends Authenticatable
         ];
     }
 
-    // public function tarif()
-    // {
-    //     return $this->belongsTo(Tarif::class, 'id_tarif', 'id_tarif');
-    // }
+    public function tarif()
+    {
+        return $this->belongsTo(Tarif::class, 'id_tarif');
+    }
     // public function tagihan()
     // {
     //     return $this->hasMany(Tagihan::class, 'id_pelanggan');

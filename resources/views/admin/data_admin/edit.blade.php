@@ -1,4 +1,4 @@
-@extends('admin.layout.app')
+@extends('layout.app')
 
 @section('title', 'Edit Data Admin')
 @section('content')
@@ -34,7 +34,9 @@
                         </div>
                         <!--end::Header-->
                         <!--begin::Form-->
-                        <form>
+                        <form method="POST" action="{{ route('admin.data_admin.update', $admin->id_user) }}">
+                            @csrf
+                            @method('PUT')
                             <!--begin::Body-->
                             <div class="card-body">
                                 <div class="mb-3">
@@ -42,15 +44,17 @@
                                     <input
                                         type="text"
                                         class="form-control"
-                                        id="nama_admin" />
+                                        id="nama_admin"
+                                        name="nama_admin"
+                                        value="{{ $admin->nama_admin }}" />
                                 </div>
                                 <div class="mb-3">
                                     <label for="username" class="form-label">Username</label>
-                                    <input type="text" class="form-control" id="username" />
+                                    <input type="text" class="form-control" id="username" name="username" value="{{ $admin->username }}" />
                                 </div>
                                 <div class="mb-3">
                                     <label for="password" class="form-label">Password (kosongkan jika tidak ingin mengubah)</label>
-                                    <input type="password" class="form-control" id="password" />
+                                    <input type="password" class="form-control" id="password" name="password" />
                                 </div>
                                 <div class="mb-3">
                                     <label for="confirm_password" class="form-label">Confirm Password</label>

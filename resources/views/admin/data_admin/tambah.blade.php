@@ -1,4 +1,4 @@
-@extends('admin.layout.app')
+@extends('layout.app')
 
 @section('title', 'Tambah Data Admin')
 @section('content')
@@ -34,7 +34,8 @@
                         </div>
                         <!--end::Header-->
                         <!--begin::Form-->
-                        <form>
+                        <form method="POST" action="{{ route('admin.data_admin.tambah.post') }}">
+                            @csrf
                             <!--begin::Body-->
                             <div class="card-body">
                                 <div class="mb-3">
@@ -42,20 +43,17 @@
                                     <input
                                         type="text"
                                         class="form-control"
-                                        id="nama_admin" />
+                                        name="nama_admin" />
                                 </div>
                                 <div class="mb-3">
                                     <label for="username" class="form-label">Username</label>
-                                    <input type="text" class="form-control" id="username" />
+                                    <input type="text" class="form-control" name="username" />
                                 </div>
                                 <div class="mb-3">
                                     <label for="password" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="password" />
+                                    <input type="password" class="form-control" name="password" />
                                 </div>
-                                <div class="mb-3">
-                                    <label for="confirm_password" class="form-label">Confirm Password</label>
-                                    <input type="password" class="form-control" id="confirm_password" />
-                                </div>
+                                <input type="hidden" name="id_level" value="1">
                             </div>
                             <!--end::Body-->
                             <!--begin::Footer-->

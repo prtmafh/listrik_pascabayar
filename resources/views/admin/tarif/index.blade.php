@@ -38,21 +38,21 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="text-center">1</td>
-                                        <td>1300 VA</td>
-                                        <td>Rp 1.500,-</td>
+                                        @foreach ($tarif as $i => $t)
+                                        <td class="text-center">{{ $i + 1 }}</td>
+                                        <td>{{ $t->daya }} VA</td>
+                                        <td>Rp {{ number_format($t->tarifperkwh, 0, ',', '.') }}</td>
                                         <td class="text-end">
-                                            <a href="{{ route('admin.tarif.edit', 1) }}"
-                                                class="btn btn-sm btn-primary btn-edit">
+                                            <a href="{{ route('admin.tarif.edit', $t->id_tarif) }}" class="btn btn-sm btn-primary btn-edit">
                                                 <i class="bi bi-pencil-square"></i>
                                             </a>
-                                            <button type="button" class="btn btn-sm btn-danger btn-delete">
+                                            <a href="{{ route('admin.tarif.delete', $t->id_tarif) }}" class="btn btn-sm btn-danger btn-delete" onclick="return confirm('Yakin ingin menghapus data ini?')">
                                                 <i class="bi bi-trash"></i>
-                                            </button>
+                                            </a>
                                         </td>
                                     </tr>
 
-
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

@@ -33,28 +33,29 @@
                             <table id="mytable" class="table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th class="text-center" style="width: 40px">No.</th>
+                                        <th style="width: 40px">No.</th>
                                         <th>Username</th>
                                         <th>Nama Admin</th>
-                                        <th class="text-end">Aksi</th>
+                                        <th style="width: 100px">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($admins as $i => $admin)
                                     <tr>
-                                        <td class="text-center">1</td>
-                                        <td>beni</td>
-                                        <td>Beni</td>
-                                        <td class="text-end">
-                                            <a href="{{ route('admin.data_admin.edit', 1) }}"
-                                                class="btn btn-sm btn-primary btn-edit">
+                                        <td>{{ $i + 1 }}</td>
+                                        <td class="text-capitalize">{{ $admin->nama_admin }}</td>
+                                        <td>{{ $admin->username }}</td>
+                                        <td>
+                                            <a href="{{ route('admin.data_admin.edit', $admin->id_user) }}" class="btn btn-sm btn-primary btn-edit">
+
                                                 <i class="bi bi-pencil-square"></i>
                                             </a>
-                                            <button type="button" class="btn btn-sm btn-danger btn-delete">
+                                            <a href="{{ route('admin.data_admin.delete', $admin->id_user) }}" class="btn btn-sm btn-danger btn-delete" onclick="return confirm('Yakin ingin menghapus data ini?')">
                                                 <i class="bi bi-trash"></i>
-                                            </button>
+                                            </a>
                                         </td>
                                     </tr>
-
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

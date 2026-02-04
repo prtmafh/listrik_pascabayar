@@ -30,17 +30,38 @@
                             <table id="mytable" class="table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th class="text-center " style="width: 40px">No.</th>
+                                        <th style="width: 40px">No.</th>
                                         <th>Username</th>
                                         <th>Nama Pengguna</th>
                                         <th>Alamat</th>
                                         <th>Nomor KwH</th>
-                                        <th class="text-end">Aksi</th>
+                                        <th style="width: 100px">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($pelanggans as $index => $pelanggan)
+                                    <tr>
+                                        <td>{{ $index + 1 }}</td>
+                                        <td>{{ $pelanggan->username }}</td>
+                                        <td>{{ $pelanggan->nama_pelanggan }}</td>
+                                        <td>{{ $pelanggan->alamat }}</td>
+                                        <td>{{ $pelanggan->nomor_kwh }}</td>
+                                        <td>
+                                            <a href="{{ route('admin.data_pengguna.edit', $pelanggan->id_pelanggan) }}" class="btn btn-sm btn-primary btn-edit">
 
+                                                <i class="bi bi-pencil-square"></i>
 
+                                            </a>
+                                            <form action="{{ route('admin.data_pengguna.delete', $pelanggan->id_pelanggan) }}" method="POST" class="d-inline">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-sm btn-danger " onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

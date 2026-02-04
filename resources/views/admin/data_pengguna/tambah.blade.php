@@ -34,32 +34,38 @@
                         </div>
                         <!--end::Header-->
                         <!--begin::Form-->
-                        <form>
+                        <form method="POST" action="{{ route('admin.data_pengguna.tambah.post') }}">
+                            @csrf
                             <!--begin::Body-->
                             <div class="card-body">
                                 <div class="mb-3">
-                                    <label for="nama_admin" class="form-label">Nama Pengguna</label>
-                                    <input type="text" class="form-control" id="nama_admin" />
+                                    <label for="nama_pelanggan" class="form-label">Nama Pengguna</label>
+                                    <input type="text" class="form-control" id="nama_pelanggan" name="nama_pelanggan" />
                                 </div>
                                 <div class="mb-3">
                                     <label for="alamat" class="form-label">Alamat</label>
-                                    <input type="text" class="form-control" id="alamat" />
+                                    <input type="text" class="form-control" id="alamat" name="alamat" />
                                 </div>
                                 <div class="mb-3">
-                                    <label for="nomorkwh" class="form-label">Nomor KwH</label>
-                                    <input type="text" class="form-control" id="nomorkwh" />
+                                    <label for="nomor_kwh" class="form-label">Nomor KwH</label>
+                                    <input type="text" class="form-control" id="nomor_kwh" name="nomor_kwh" />
                                 </div>
                                 <div class="mb-3">
                                     <label for="id_tarif" class="form-label">Daya Listrik</label>
-                                    <input type="text" class="form-control" id="id_tarif" />
+                                    <select class="form-control" id="id_tarif" name="id_tarif">
+                                        <option value="" disabled selected>Pilih Daya Listrik</option>
+                                        @foreach ($tarif as $t)
+                                        <option value="{{ $t->id_tarif }}">{{ $t->daya }} VA - Rp {{ number_format($t->tarifperkwh, 0, ',', '.') }} per Kwh</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="mb-3">
                                     <label for="username" class="form-label">Username</label>
-                                    <input type="text" class="form-control" id="username" />
+                                    <input type="text" class="form-control" id="username" name="username" />
                                 </div>
                                 <div class="mb-3">
                                     <label for="password" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="password" />
+                                    <input type="password" class="form-control" id="password" name="password" />
                                 </div>
                             </div>
                             <!--end::Body-->

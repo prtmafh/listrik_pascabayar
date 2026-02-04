@@ -1,4 +1,4 @@
-@extends('admin.layout.app')
+@extends('layout.app')
 
 @section('title', 'Edit Tarif Listrik')
 @section('content')
@@ -34,7 +34,9 @@
                         </div>
                         <!--end::Header-->
                         <!--begin::Form-->
-                        <form>
+                        <form method="POST" action="{{ route('admin.tarif.update', $tarif->id_tarif) }}">
+                            @csrf
+                            @method('PUT')
                             <!--begin::Body-->
                             <div class="card-body">
                                 <div class="mb-3">
@@ -42,11 +44,13 @@
                                     <input
                                         type="text"
                                         class="form-control"
-                                        id="daya" />
+                                        id="daya"
+                                        name="daya"
+                                        value="{{ $tarif->daya }}" />
                                 </div>
                                 <div class="mb-3">
                                     <label for="tarif_per_kwh" class="form-label">Tarif per Kwh</label>
-                                    <input type="text" class="form-control" id="tarif_per_kwh" />
+                                    <input type="text" class="form-control" id="tarif_per_kwh" name="tarifperkwh" value="{{ $tarif->tarifperkwh }}" />
                                 </div>
                             </div>
                             <!--end::Body-->

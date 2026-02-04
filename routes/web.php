@@ -23,19 +23,31 @@ Route::middleware(['auth', 'ceklevel:1'])->group(function () {
 
     Route::get('/data_admin', [AdminController::class, 'index'])->name('admin.data_admin');
     Route::get('/tambah_data_admin', [AdminController::class, 'TambahAdmin'])->name('admin.data_admin.tambah');
+    Route::post('/tambah_data_admin', [AdminController::class, 'TambahAdminPost'])->name('admin.data_admin.tambah.post');
     Route::get('/edit_data_admin/{id}', [AdminController::class, 'EditAdmin'])->name('admin.data_admin.edit');
+    Route::put('/update_data_admin/{id}', [AdminController::class, 'UpdateAdmin'])->name('admin.data_admin.update');
+    Route::get('/delete_data_admin/{id}', [AdminController::class, 'DeleteAdmin'])->name('admin.data_admin.delete');
 
     Route::get('/data_petugas', [PetugasController::class, 'index'])->name('admin.data_petugas');
     Route::get('/tambah_data_petugas', [PetugasController::class, 'TambahPetugas'])->name('admin.data_petugas.tambah');
     Route::post('/tambah_data_petugas', [PetugasController::class, 'TambahPetugasPost'])->name('admin.data_petugas.tambah.post');
     Route::get('/edit_data_petugas/{id}', [PetugasController::class, 'EditPetugas'])->name('admin.data_petugas.edit');
+    Route::put('/update_data_petugas/{id}', [PetugasController::class, 'UpdatePetugas'])->name('admin.data_petugas.update');
+    Route::get('/delete_data_petugas/{id}', [PetugasController::class, 'DeletePetugas'])->name('admin.data_petugas.delete');
 
     Route::get('/data_pengguna', [PenggunaController::class, 'index'])->name('admin.data_pengguna');
     Route::get('/tambah_data_pengguna', [PenggunaController::class, 'TambahPengguna'])->name('admin.data_pengguna.tambah');
+    Route::post('/tambah_data_pengguna', [PenggunaController::class, 'TambahPenggunaPost'])->name('admin.data_pengguna.tambah.post');
+    Route::get('/edit_data_pengguna/{id}', [PenggunaController::class, 'EditPengguna'])->name('admin.data_pengguna.edit');
+    Route::put('/update_data_pengguna/{id}', [PenggunaController::class, 'UpdatePengguna'])->name('admin.data_pengguna.update');
+    Route::get('/delete_data_pengguna/{id}', [PenggunaController::class, 'DeletePengguna'])->name('admin.data_pengguna.delete');
 
     Route::get('/tarif', [TarifController::class, 'index'])->name('admin.tarif');
     Route::get('/tambah_tarif', [TarifController::class, 'TambahTarif'])->name('admin.tarif.tambah');
+    Route::post('/tambah_tarif', [TarifController::class, 'TambahTarifPost'])->name('admin.tarif.tambah.post');
     Route::get('/edit_tarif/{id}', [TarifController::class, 'EditTarif'])->name('admin.tarif.edit');
+    Route::put('/update_tarif/{id}', [TarifController::class, 'UpdateTarif'])->name('admin.tarif.update');
+    Route::get('/delete_tarif/{id}', [TarifController::class, 'HapusTarif'])->name('admin.tarif.delete');
 
     Route::get('/penggunaan', [PenggunaanController::class, 'index'])->name('admin.penggunaan');
     Route::post('/penggunaan/generate', [PenggunaanController::class, 'generateBulanIni'])->name('penggunaan.generate');
