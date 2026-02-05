@@ -72,7 +72,7 @@
                                             <th>Pemakaian</th>
                                             <th>Total Bayar</th>
                                             <th>Status</th>
-                                            <th>Aksi</th>
+                                            {{-- <th>Aksi</th> --}}
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -96,13 +96,11 @@
                                             <td>
                                                 <span class="badge bg-success">{{ $tagihan->status ?? '-' }}</span>
                                             </td>
-                                            <td>
-                                                {{-- <a href="{{ route('pembayaran.struk', $p->id_pembayaran) }}" --}}
-                                                    <a href="#" class="btn btn-sm btn-outline-secondary"
-                                                    target="_blank">
+                                            {{-- <td>
+                                                <a href="#" class="btn btn-sm btn-outline-secondary" target="_blank">
                                                     <i class="bi bi-receipt"></i> Struk
                                                 </a>
-                                            </td>
+                                            </td> --}}
                                         </tr>
                                         @endforeach
                                     </tbody>

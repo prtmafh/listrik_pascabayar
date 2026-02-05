@@ -22,8 +22,9 @@
                 aria-label="Main navigation" data-accordion="false" id="navigation">
                 @if (Auth::guard('web')->check())
                 @php $level = Auth::user()->id_level; @endphp
-                <li class="nav-item menu-open">
-                    <a href="{{route('admin.dashboard')}}" class="nav-link active">
+                <li class="nav-item">
+                    <a href="{{route('admin.dashboard')}}"
+                        class="nav-link {{ Request::is('dashboard*') ? 'active' : '' }}">
                         <i class="nav-icon bi bi-speedometer"></i>
                         <p>
                             Dashboard
@@ -35,7 +36,8 @@
                 @if ($level == 1)
                 <li class="nav-header">MASTER DATA</li>
                 <li class="nav-item">
-                    <a href="{{route('admin.data_admin')}}" class="nav-link">
+                    <a href="{{route('admin.data_admin')}}"
+                        class="nav-link {{ Request::is('data_admin*') ? 'active' : '' }}">
                         <i class="nav-icon bi bi-person-fill"></i>
                         <p>
                             Data Admin
@@ -43,7 +45,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('admin.data_petugas')}}" class="nav-link">
+                    <a href="{{route('admin.data_petugas')}}"
+                        class="nav-link {{ Request::is('data_petugas*') ? 'active' : '' }}">
                         <i class="nav-icon bi bi-person-gear"></i>
                         <p>
                             Data Petugas
@@ -51,7 +54,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('admin.data_pengguna')}}" class="nav-link">
+                    <a href="{{route('admin.data_pengguna')}}"
+                        class="nav-link {{ Request::is('data_pengguna*') ? 'active' : '' }}">
                         <i class="nav-icon bi bi-people"></i>
                         <p>
                             Data Pengguna
@@ -59,7 +63,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('admin.tarif')}}" class="nav-link">
+                    <a href="{{route('admin.tarif')}}" class="nav-link {{ Request::is('tarif*') ? 'active' : '' }}">
                         <i class="nav-icon bi bi-lightning-charge"></i>
                         <p>
                             Tarif Listrik
@@ -72,7 +76,8 @@
                 <li class="nav-header">TRANSAKSI</li>
                 @if ($level == 1)
                 <li class="nav-item">
-                    <a href="{{route('admin.penggunaan')}}" class="nav-link">
+                    <a href="{{route('admin.penggunaan')}}"
+                        class="nav-link {{ Request::is('penggunaan*') ? 'active' : '' }}">
                         <i class="nav-icon bi bi-graph-up"></i>
                         <p>Penggunaan</p>
                     </a>
@@ -80,7 +85,7 @@
                 @endif
 
                 <li class="nav-item">
-                    <a href="{{route('admin.tagihan')}}" class="nav-link">
+                    <a href="{{route('admin.tagihan')}}" class="nav-link {{ Request::is('tagihan*') ? 'active' : '' }}">
                         <i class="nav-icon bi bi-receipt"></i>
                         <p>Tagihan</p>
                     </a>
@@ -88,7 +93,7 @@
                 @if ($level == 1)
                 <li class="nav-header">LAPORAN</li>
                 <li class="nav-item">
-                    <a href="{{route('admin.laporan')}}" class="nav-link">
+                    <a href="{{route('admin.laporan')}}" class="nav-link {{ Request::is('laporan*') ? 'active' : '' }}">
                         <i class="nav-icon bi bi-credit-card"></i>
                         <p>Pembayaran</p>
                     </a>
@@ -96,7 +101,7 @@
                 @endif
                 @if ($level == 2)
                 <li class="nav-item">
-                    <a href="{{route('admin.laporan')}}" class="nav-link">
+                    <a href="{{route('admin.laporan')}}" class="nav-link {{ Request::is('laporan*') ? 'active' : '' }}">
                         <i class="nav-icon bi bi-credit-card"></i>
                         <p>Pembayaran</p>
                     </a>

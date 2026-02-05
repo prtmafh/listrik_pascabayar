@@ -40,7 +40,7 @@ Route::middleware(['auth', 'ceklevel:1'])->group(function () {
     Route::post('/tambah_data_pengguna', [PenggunaController::class, 'TambahPenggunaPost'])->name('admin.data_pengguna.tambah.post');
     Route::get('/edit_data_pengguna/{id}', [PenggunaController::class, 'EditPengguna'])->name('admin.data_pengguna.edit');
     Route::put('/update_data_pengguna/{id}', [PenggunaController::class, 'UpdatePengguna'])->name('admin.data_pengguna.update');
-    Route::get('/delete_data_pengguna/{id}', [PenggunaController::class, 'DeletePengguna'])->name('admin.data_pengguna.delete');
+    Route::delete('/delete_data_pengguna/{id}', [PenggunaController::class, 'DeletePengguna'])->name('admin.data_pengguna.delete');
 
     Route::get('/tarif', [TarifController::class, 'index'])->name('admin.tarif');
     Route::get('/tambah_tarif', [TarifController::class, 'TambahTarif'])->name('admin.tarif.tambah');
@@ -51,7 +51,7 @@ Route::middleware(['auth', 'ceklevel:1'])->group(function () {
 
     Route::get('/penggunaan', [PenggunaanController::class, 'index'])->name('admin.penggunaan');
     Route::post('/penggunaan/generate', [PenggunaanController::class, 'generateBulanIni'])->name('penggunaan.generate');
-    Route::get('/edit_penggunaan/{id}', [PenggunaanController::class, 'EditPenggunaan'])->name('admin.penggunaan.edit');
+    Route::put('/edit_penggunaan/{penggunaan}', [PenggunaanController::class, 'EditPenggunaan'])->name('admin.penggunaan.edit');
 });
 Route::middleware(['auth', 'ceklevel:1,2'])->group(
     function () {
@@ -59,13 +59,15 @@ Route::middleware(['auth', 'ceklevel:1,2'])->group(
         Route::get('/tagihan', [tagihanController::class, 'index'])->name('admin.tagihan');
         Route::post('/tagihan/generate', [tagihanController::class, 'generate'])->name('tagihan.generate');
 
-        Route::get('/pembayaran', [PembayaranController::class, 'index'])->name('admin.pembayaran');
+        Route::get('/pembayaran/{id_tagihan}', [PembayaranController::class, 'index'])->name('admin.pembayaran');
+        Route::post('/pembayaran/store', [PembayaranController::class, 'store'])->name('pembayaran.store');
+
         Route::get('/laporan', [LaporanController::class, 'index'])->name('admin.laporan');
     }
 );
-Route::middleware(['auth:pelanggan'])->group(function () {
-    Route::get('/pelanggan/dashboard', [PelangganController::class, 'index'])->name('pelanggan.dashboard');
-    Route::get('/pelanggan/penggunaan_saya', [PelangganController::class, 'penggunaanSaya'])->name('pelanggan.penggunaan_saya');
-    Route::get('/pelanggan/tagihan_saya', [PelangganController::class, 'tagihanSaya'])->name('pelanggan.tagihan_saya');
-    Route::get('/pelanggan/riwayat_pembayaran', [PelangganController::class, 'riwayat'])->name('pelanggan.riwayat_pembayaran');
-});
+// Route::middleware(['auth:pelanggan'])->group(function () {
+//     Route::get('/pelanggan/dashboard', [PelangganController::class, 'index'])->name('pelanggan.dashboard');
+//     Route::get('/pelanggan/penggunaan_saya', [PelangganController::class, 'penggunaanSaya'])->name('pelanggan.penggunaan_saya');
+//     Route::get('/pelanggan/tagihan_saya', [PelangganController::class, 'tagihanSaya'])->name('pelanggan.tagihan_saya');
+//     Route::get('/pelanggan/riwayat_pembayaran', [PelangganController::class, 'riwayat'])->name('pelanggan.riwayat_pembayaran');
+// });

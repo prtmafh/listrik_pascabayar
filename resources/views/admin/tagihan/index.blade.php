@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="d-flex justify-content-end gap-2">
-                        <select name="bulan" class="form-control w-auto text-muted" required>
+                        {{-- <select name="bulan" class="form-control w-auto text-muted" required>
                             <option value="">Pilih Bulan</option>
                             <option value="Januari">Januari</option>
                             <option value="Februari">Februari</option>
@@ -29,7 +29,7 @@
                             <option value="Desember">Desember</option>
                         </select>
                         <input type="text" name="tahun" class="form-control w-auto" placeholder="Tahun (misal: 2025)"
-                            required>
+                            required> --}}
 
                         @if (Auth::guard('web')->check())
                         @php $level = Auth::user()->id_level; @endphp
@@ -103,19 +103,20 @@
                                             <td>{{ \Carbon\Carbon::parse($item->created_at)->format('d-m-Y H:i') }}</td>
                                             <td>
                                                 @if($item->status == 'belum bayar')
-                                                <a href="{{ route('pembayaran.create', $item->id_tagihan) }}"
+                                                <a href="{{ route('admin.pembayaran', $item->id_tagihan) }}"
                                                     class="btn btn-sm btn-success">
                                                     <i class="bi bi-cash-coin"></i>
                                                 </a>
 
                                                 @else
-                                                {{-- <button class="btn btn-sm btn-secondary" disabled>
+                                                <button class="btn btn-sm btn-secondary" disabled>
                                                     <i class="bi bi-check-circle"></i>
-                                                </button> --}}
-                                                <a href="{{ route('pembayaran.struk', $item->pembayaran->id_pembayaran) }}"
+                                                </button>
+                                                {{-- <a
+                                                    href="{{ route('pembayaran.struk', $item->pembayaran->id_pembayaran) }}"
                                                     class="btn btn-sm btn-outline-secondary" target="_blank">
                                                     <i class="bi bi-receipt"></i> Struk
-                                                </a>
+                                                </a> --}}
                                                 @endif
                                             </td>
                                         </tr>

@@ -1,4 +1,4 @@
-@extends('admin.layout.app')
+@extends('layout.app')
 
 @section('title', 'Input Meter')
 @section('content')
@@ -64,8 +64,10 @@
                                             </div>
                                             <div class="mb-3">
                                                 <label class="form-label">Meter Akhir</label>
-                                                <input type="number" name="meter_akhir" class="form-control" value="" required min="">
-                                                <small class="form-text text-muted">Meter akhir harus lebih besar dari meter awal</small>
+                                                <input type="number" name="meter_akhir" class="form-control" value=""
+                                                    required min="">
+                                                <small class="form-text text-muted">Meter akhir harus lebih besar dari
+                                                    meter awal</small>
                                             </div>
                                             <div class="mb-3">
                                                 <label class="form-label">Jumlah Meter (Otomatis)</label>

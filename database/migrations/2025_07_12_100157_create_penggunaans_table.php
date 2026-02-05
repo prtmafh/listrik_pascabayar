@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('bulan', 10);
             $table->year('tahun');
             $table->integer('meter_awal');
-            $table->integer('meter_akhir');
+            $table->integer('meter_akhir')->nullable();
             $table->timestamps();
 
             $table->foreign('id_pelanggan')->references('id_pelanggan')->on('pelanggan')->onDelete('cascade');

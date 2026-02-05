@@ -18,12 +18,26 @@ class PenggunaanController extends Controller
         'June', 'May', 'April', 'March', 'February', 'January')")
             ->orderBy('id_penggunaan', 'desc')
             ->get();
+
+
         return view('admin.penggunaan.index', compact('data'));
     }
 
-    public function EditPenggunaan($id)
+    public function EditPenggunaan(Request $request, Penggunaan $penggunaan)
     {
-        return view('admin.penggunaan.edit');
+        $request->validate([
+            'meter_akhir' => 'required|integer|min:0',
+        ]);
+
+        if ($request->meter_akhir < $penggunaan->meter_awal) {
+            return redirect()->route('penggunaan.index')->with('error', 'Meter akhir tidak boleh lebih kecil dari meter awal.');
+        }
+
+        $penggunaan->update([
+            'meter_akhir' => $request->meter_akhir,
+        ]);
+
+        return redirect()->back()->with('success', 'Meter akhir berhasil diperbarui.');
     }
 
     public function generateBulanIni()

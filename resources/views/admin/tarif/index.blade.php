@@ -27,6 +27,12 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
+                            @if(session('success'))
+                            <div class="alert alert-success">{{ session('success') }}</div>
+                            @endif
+                            @if(session('error'))
+                            <div class="alert alert-danger">{{ session('error') }}</div>
+                            @endif
                             <table id="mytable" class="table table-striped table-hover">
                                 <thead>
                                     <tr>
@@ -37,22 +43,25 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($tarif as $i => $t)
                                     <tr>
-                                        @foreach ($tarif as $i => $t)
                                         <td class="text-center">{{ $i + 1 }}</td>
                                         <td>{{ $t->daya }} VA</td>
                                         <td>Rp {{ number_format($t->tarifperkwh, 0, ',', '.') }}</td>
                                         <td class="text-end">
-                                            <a href="{{ route('admin.tarif.edit', $t->id_tarif) }}" class="btn btn-sm btn-primary btn-edit">
+                                            <a href="{{ route('admin.tarif.edit', $t->id_tarif) }}"
+                                                class="btn btn-sm btn-primary btn-edit">
                                                 <i class="bi bi-pencil-square"></i>
                                             </a>
-                                            <a href="{{ route('admin.tarif.delete', $t->id_tarif) }}" class="btn btn-sm btn-danger btn-delete" onclick="return confirm('Yakin ingin menghapus data ini?')">
+                                            <a href="{{ route('admin.tarif.delete', $t->id_tarif) }}"
+                                                class="btn btn-sm btn-danger btn-delete"
+                                                onclick="return confirm('Yakin ingin menghapus data ini?')">
                                                 <i class="bi bi-trash"></i>
                                             </a>
                                         </td>
                                     </tr>
-
                                     @endforeach
+
                                 </tbody>
                             </table>
                         </div>

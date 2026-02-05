@@ -27,6 +27,12 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
+                            @if(session('success'))
+                            <div class="alert alert-success">{{ session('success') }}</div>
+                            @endif
+                            @if(session('error'))
+                            <div class="alert alert-danger">{{ session('error') }}</div>
+                            @endif
                             <div class="mb-3 text-end">
 
                             </div>
@@ -34,8 +40,8 @@
                                 <thead>
                                     <tr>
                                         <th style="width: 40px">No.</th>
-                                        <th>Username</th>
                                         <th>Nama Admin</th>
+                                        <th>Username</th>
                                         <th style="width: 100px">Aksi</th>
                                     </tr>
                                 </thead>
@@ -46,11 +52,14 @@
                                         <td class="text-capitalize">{{ $admin->nama_admin }}</td>
                                         <td>{{ $admin->username }}</td>
                                         <td>
-                                            <a href="{{ route('admin.data_admin.edit', $admin->id_user) }}" class="btn btn-sm btn-primary btn-edit">
+                                            <a href="{{ route('admin.data_admin.edit', $admin->id_user) }}"
+                                                class="btn btn-sm btn-primary btn-edit">
 
                                                 <i class="bi bi-pencil-square"></i>
                                             </a>
-                                            <a href="{{ route('admin.data_admin.delete', $admin->id_user) }}" class="btn btn-sm btn-danger btn-delete" onclick="return confirm('Yakin ingin menghapus data ini?')">
+                                            <a href="{{ route('admin.data_admin.delete', $admin->id_user) }}"
+                                                class="btn btn-sm btn-danger btn-delete"
+                                                onclick="return confirm('Yakin ingin menghapus data ini?')">
                                                 <i class="bi bi-trash"></i>
                                             </a>
                                         </td>

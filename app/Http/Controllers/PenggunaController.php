@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pelanggan;
+use App\Models\Penggunaan;
 use App\Models\Tarif;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -24,21 +26,45 @@ class PenggunaController extends Controller
     public function TambahPenggunaPost(Request $request)
     {
         $request->validate([
-            'nama_pelanggan' => 'required|string|max:255',
-            'alamat' => 'required|string|max:500',
-            'nomor_kwh' => 'required|string|max:50|unique:pelanggan,nomor_kwh',
-            'id_tarif' => 'required|exists:tarif,id_tarif',
-            'username' => 'required|string|max:255|unique:pelanggan,username',
-            'password' => 'required|string|min:6',
+            'username' => 'required|unique:pelanggan',
+            'password' => 'required',
+            'nomor_kwh' => 'required|unique:pelanggan',
+            'nama_pelanggan' => 'required',
+            'alamat' => 'required',
+            'id_tarif' => 'required|exists:tarif,id_tarif'
         ]);
-        pelanggan::create([
-            'nama_pelanggan' => $request->nama_pelanggan,
-            'alamat' => $request->alamat,
-            'nomor_kwh' => $request->nomor_kwh,
-            'id_tarif' => $request->id_tarif,
+
+        // Simpan pelanggan
+        $pelanggan = Pelanggan::create([
             'username' => $request->username,
             'password' => Hash::make($request->password),
+            'nomor_kwh' => $request->nomor_kwh,
+            'nama_pelanggan' => $request->nama_pelanggan,
+            'alamat' => $request->alamat,
+            'id_tarif' => $request->id_tarif
         ]);
+
+        // Siapkan informasi bulan & tahun saat ini
+        $bulan = Carbon::now()->translatedFormat('F'); // Misal: Juli
+        $tahun = Carbon::now()->year;
+
+        // Cek apakah sudah ada data penggunaan bulan ini
+        $sudahAda = Penggunaan::where('id_pelanggan', $pelanggan->id_pelanggan)
+            ->where('bulan', $bulan)
+            ->where('tahun', $tahun)
+            ->exists();
+
+        // Jika belum ada, buat data penggunaan awal
+        if (!$sudahAda) {
+            Penggunaan::create([
+                'id_pelanggan' => $pelanggan->id_pelanggan,
+                'bulan' => $bulan,
+                'tahun' => $tahun,
+                'meter_awal' => 0,
+                'meter_akhir' => null,
+            ]);
+        }
+
         return redirect()->route('admin.data_pengguna')->with('success', 'Data pengguna berhasil ditambahkan!');
     }
 
@@ -73,8 +99,7 @@ class PenggunaController extends Controller
 
     public function DeletePengguna($id)
     {
-        $pelanggan = Pelanggan::findOrFail($id);
-        $pelanggan->delete();
-        return redirect()->route('admin.data_pengguna')->with('success', 'Data pengguna berhasil dihapus!');
+        Pelanggan::findOrFail($id)->delete();
+        return redirect()->back()->with('success', 'Data pengguna berhasil dihapus!');
     }
 }
